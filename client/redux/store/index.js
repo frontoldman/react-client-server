@@ -1,8 +1,8 @@
-import {creatStore, compose} from "redux";
+import {createStore, compose} from "redux";
 import rootReducer from "../reducers";
 
 const configureStoreProd = (initialState = {}) => {
-  const finalCreateStore = compose()(creatStore)
+  const finalCreateStore = compose()(createStore)
 
   return finalCreateStore(rootReducer, initialState)
 }

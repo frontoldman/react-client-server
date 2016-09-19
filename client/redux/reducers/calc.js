@@ -5,6 +5,8 @@ const add = (state = 0, action) => {
     case 'ADD':
       return state + action.num
   }
+
+  return state
 }
 
 export default combineReducers({
