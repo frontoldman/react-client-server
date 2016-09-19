@@ -4,7 +4,7 @@ import calc from "./calc";
 
 const rootReducer = combineReducers({
   calc,
-  routerReducer
+  routing: routerReducer
 })
 
 export default rootReducer
