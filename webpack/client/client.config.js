@@ -19,8 +19,7 @@ const config = {
       {
         test : /\.js$/,
         loaders: ['babel'],
-        exclude : ['node_modules'],
-        include : __dirname
+        exclude : ['node_modules']
       }
     ]
   },
