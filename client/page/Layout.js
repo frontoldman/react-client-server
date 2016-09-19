@@ -10,16 +10,12 @@ export default class Layout extends Component {
       children
     } = this.props
 
-    return ( < div >
-      < h2 > layout
-        <
-        /h2> {
-        children
-      }
-        <
-        /div>
-        )
-        }
+    return (
+      <div>
+        <h2> layout</h2>
+        {children}
+      </div>
+    )
+  }
 
-
-        }
+}

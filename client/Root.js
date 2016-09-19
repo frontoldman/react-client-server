@@ -3,24 +3,14 @@ import {Provider} from "react-redux";
 import {Router} from "react-router";
 import routes from "../routes";
 
-export default class Root
-extend
-Component
-{
-  constructor(props)
-  {
+export default class Root extends Component {
+  constructor(props) {
     super(props)
   }
-
-  render()
-  {
+  render() {
     const {history, store} = this.props
-
-    < Provider
-    store = {store} >
-      < Router
-    history = {history}
-    routes = {routes} / >
-      < / Provider >
+    return (< Provider store={store}>
+      < Router history={history} routes={routes}/>
+    </Provider>)
   }
 }

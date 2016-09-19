@@ -14,16 +14,18 @@ const config = {
     publicPath: '/build/',
     chunkFilename: '[name]-[chunkhash:8].js'
   },
-  loaders: [
-    {
-      test: /\.js$/,
-      loaders: ['babel'],
-      exclude: [/node_modules/],
-      include: __dirname
-    }
-  ],
+  module: {
+    loaders: [
+      {
+        test : /\.js$/,
+        loaders: ['babel'],
+        exclude : ['node_modules'],
+        include : __dirname
+      }
+    ]
+  },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
+    new webpack.HotModuleReplacementPlugin()
   ]
 }
 
