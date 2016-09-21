@@ -15,7 +15,3 @@ const root = (<Root history={history} store={store}/>)
 
 ReactDOM.render(root, document.getElementById('root'))
 
-
-if (module.hot) {
-  module.hot.accept();
-}
