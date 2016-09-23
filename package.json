@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "babel-node webpack/client/server.js",
+    "client": "babel-node webpack/client/server.js",
+    "server": "babel-node webpack/server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -43,6 +44,7 @@
     "css-loader": "^0.25.0",
     "koa-webpack-dev-middleware": "^1.2.2",
     "koa-webpack-hot-middleware": "^1.0.3",
-    "webpack": "^1.13.2"
+    "webpack": "^1.13.2",
+    "webpack-isomorphic-tools": "^2.5.8"
   }
 }
