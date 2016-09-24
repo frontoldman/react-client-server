@@ -4,15 +4,12 @@
 import path from "path";
 import WebpackIsomorphicTools from "webpack-isomorphic-tools";
 
+import isomorphicToolsConfig from '../isomorphic.tools.config'
 
 var basePath = path.join(__dirname, '../../')
 
-
-global.webpackIsomorphicTools = new WebpackIsomorphicTools({
-  assets: {}
-})
-  .development()
+global.webpackIsomorphicTools = new WebpackIsomorphicTools(isomorphicToolsConfig)
+  .development(true)
   .server(basePath, () => {
-  console.log(11)
     require('./server')
   })

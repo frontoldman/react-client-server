@@ -3,26 +3,25 @@
  */
 import React from "react";
 import {renderToString} from "react-dom/server";
-import {match} from "react-router";
-
-
+import {match, RouterContext} from "react-router";
+import {Provider} from "react-redux";
 import configureStore from "../../client/redux/store";
 import routes from "../../client/routes";
-import Html from './Html'
+import Html from "./Html";
 
-const handleRender = ctx => {
+const handleRender = function *(ctx) {
 
   const initialState = {}
   const store = configureStore(initialState)
 
-  const _ctx = ctx
+  const _ctx = this
   const {url: location} = _ctx
 
   match({routes, location}, (error, redirectLocation, renderProps) => {
     if (error) {
       _ctx.status = 500
       _ctx.body = error.message
-    } else if(renderProps){
+    } else if (renderProps) {
       const component = (
         <Provider store={store}>
           <RouterContext {...renderProps}/>
@@ -31,7 +30,7 @@ const handleRender = ctx => {
 
       _ctx.type = 'html'
       _ctx.status = 200
-      _ctx.body = renderToString(<Html component={component} store={store} />)
+      _ctx.body = renderToString(<Html component={component} store={store}/>)
     }
 
   })

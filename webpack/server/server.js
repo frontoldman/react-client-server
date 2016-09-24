@@ -11,4 +11,11 @@ var app = Koa()
 app.use(handleRender)
 
 
-app.listen(8889, () => {})
+app.listen(8889, error => {
+  if(error){
+    console.log(error)
+    return
+  }
+
+  console.log('server start on http://localhost:8889')
+})

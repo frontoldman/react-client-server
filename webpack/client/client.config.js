@@ -1,5 +1,10 @@
-import path from "path";
-import webpack from "webpack";
+import path from "path"
+import webpack from "webpack"
+import WebpackIsomorphicToolsPlugin from 'webpack-isomorphic-tools/plugin'
+
+import isomorphicToolsConfig from '../isomorphic.tools.config'
+
+const webpackIsomorphicToolsPlugin = new WebpackIsomorphicToolsPlugin(isomorphicToolsConfig)
 
 const config = {
   // 项目根目录
@@ -25,7 +30,8 @@ const config = {
     ]
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    webpackIsomorphicToolsPlugin
   ]
 }
 
