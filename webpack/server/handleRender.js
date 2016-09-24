@@ -28,9 +28,11 @@ const handleRender = function *(ctx) {
         </Provider>
       )
 
+      const assets = webpackIsomorphicTools.assets()
+
       _ctx.type = 'html'
       _ctx.status = 200
-      _ctx.body = renderToString(<Html component={component} store={store}/>)
+      _ctx.body = renderToString(<Html assets={assets} component={component} store={store}/>)
     }
 
   })
